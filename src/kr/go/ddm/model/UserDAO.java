@@ -36,6 +36,7 @@ public class UserDAO {
 				dto.setBirth(rs.getString("birth"));
 				dto.setEmail(rs.getString("email"));
 				dto.setAddr(rs.getString("addr"));
+				dto.setGrade(rs.getString("grade"));
 				dto.setRegdate(rs.getString("regdate"));
 				dto.setVisited(rs.getInt("visited"));				
 				userList.add(dto);
@@ -170,7 +171,8 @@ public class UserDAO {
 		UserDTO dto = new UserDTO();		
 		try {	
 			con = Maria.getConnection();
-			pstmt = con.prepareStatement(Maria.USER_SELECT_ALL);
+			pstmt = con.prepareStatement(Maria.USER_SELECT_ONE);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -182,6 +184,7 @@ public class UserDAO {
 				dto.setBirth(rs.getString("birth"));
 				dto.setEmail(rs.getString("email"));
 				dto.setAddr(rs.getString("addr"));
+				dto.setGrade(rs.getString("grade"));
 				dto.setVisited(rs.getInt("visited"));
 				dto.setRegdate(rs.getString("regdate"));
 			}

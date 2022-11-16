@@ -36,7 +36,7 @@ public class IdCheckCtrl extends HttpServlet {
 		//DAO 반환조건
 		if(cnt>0) {				//사용 중인 아이디
 			result = false;
-		} else {					//사용 가능 아이디
+		} else {				//사용 가능 아이디
 			result = true;
 		}
 		

@@ -47,6 +47,7 @@ public class AddUserCtrl extends HttpServlet {
         
         try {
         	encrypted = AES256.encryptAES256(pw, key);
+        	/*System.out.println("비밀번호 암호화 : "+encrypted);*/
         } catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -54,7 +55,7 @@ public class AddUserCtrl extends HttpServlet {
         if(cnt>0){	//있는 아이디
 			result = false;
 			response.sendRedirect("./user/addUser.jsp?aid="+id);
-        } else { 	//없는 아이디
+        } else { 		//없는 아이디
         	result = true;
         	user.setId(id);
 			user.setPw(encrypted);

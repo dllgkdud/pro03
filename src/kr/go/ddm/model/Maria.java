@@ -19,11 +19,12 @@ public class Maria {
 	public static final String NOTICE_UPDATE = "update notice set title=?, content=? where no=?";
 	public static final String NOTICE_DELETE = "delete from notice where no=?";
 	
-	public static final String USER_JOIN = "insert into user(id, pw, name, birth, email, tel, address) values(?, ?, ?, ?, ?, ?, ?)";
+	public static final String USER_JOIN = "insert into user(id, pw, name, birth, email, tel, addr) values(?, ?, ?, ?, ?, ?, ?)";
 	public static final String USER_LOGIN = "select * from user where id=? and pw=?";
 	public static final String USER_ID_CHECK = "select * from user where id=?";
 	public static final String USER_UPDATE_VISITED = "update user set visited=visited+1 where id=?";
 	public static final String USER_SELECT_ALL = "select * from user order by regdate desc";
+	public static final String USER_SELECT_ONE = "select * from user where id=?";
 	public static final String USER_UPDATE = "update user set pw=?, name=?, tel=?, birth=?, email=?, addr=? where id=?";
 	
 	
